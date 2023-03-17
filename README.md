@@ -44,8 +44,8 @@ function MyComponent({ loading }) {
 | :---------: | :--------: |
 | renderCondition  | The flag that decides if the children should be rendered |
 | delay  | Debouncing delay before mounting the children after the renderCondition flag is set to true(milliseconds) |
-| minDuration  | Minimum amount of time the children will stay mounted  |
-| onRender  | A callback function that will be called when the children mounted |
+| minDuration (Optional)  | Minimum amount of time the children will stay mounted(milliseconds)  |
+| onRender (Optional)  | A callback function that will be called when the children mounted |
 
 
 [npm-url]: https://www.npmjs.com/package/debounced-render
