@@ -115,7 +115,9 @@ test('Children should not be unmounted before minDuration passes', async () => {
 test('onRender callback should be called after the children is mounted', async () => {
   const debounceDelay = 1000;
 
-  const renderCallback = jest.fn(() => {});
+  const renderCallback = jest.fn(() => {
+    return;
+  });
 
   const { rerender } = render(
     <DebouncedRender delay={debounceDelay} renderCondition={false} onRender={renderCallback}>
@@ -142,7 +144,9 @@ test('onRender callback should be called after the children is mounted', async (
 test('onRender callback should not be called before the children is mounted', async () => {
   const debounceDelay = 1000;
 
-  const renderCallback = jest.fn(() => {});
+  const renderCallback = jest.fn(() => {
+    return;
+  });
 
   const { rerender } = render(
     <DebouncedRender delay={debounceDelay} renderCondition={false} onRender={renderCallback}>
