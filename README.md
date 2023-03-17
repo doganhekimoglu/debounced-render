@@ -1,0 +1,1 @@
+Wrapper react component to debounce the render of its children
