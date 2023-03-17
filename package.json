@@ -1,6 +1,6 @@
 {
   "name": "debounced-render",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper react component to debounce the render of its children",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
