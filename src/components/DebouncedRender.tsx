@@ -49,7 +49,8 @@ const DebouncedRender: React.FC<DebouncedRenderProps> = ({
     } else if (renderedOnce && onHide) {
       onHide();
     }
-  }, [render, renderedOnce]);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [render]);
 
   useEffect(() => {
     if (
