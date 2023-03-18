@@ -32,9 +32,7 @@ function MyComponent({ loading, setLoading }) {
     // Even if the loading flag switches to false immediately after child component is mounted
     <DebouncedRender 
         renderCondition={loading} 
-        minDuration={500}
-        // Don't forget to set loading flag to false manually when used with minDuration
-        onHide={()=> setLoading(false)}>
+        minDuration={500}>
       <Loader />
     </DebouncedRender>
   );
@@ -52,8 +50,7 @@ function MyComponent({ loading, setLoading }) {
         renderCondition={loading} 
         // delay and minDuration can be used at the same time
         delay={500}
-        minDuration={200}
-        onHide={()=> setLoading(false)}>
+        minDuration={200}>
       <Loader />
     </DebouncedRender>
   );
