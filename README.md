@@ -26,11 +26,34 @@ function MyComponent({ loading }) {
 ```jsx
 import { DebouncedRender } from "debounced-render";
 
-function MyComponent({ loading }) {
+function MyComponent({ loading, setLoading }) {
   return (
-    // <Loader /> component will be rendered for at least 500ms after(if mounted at all) it is mounted.
+    // <Loader /> component will be rendered for at least 500ms after it is mounted.
     // Even if the loading flag switches to false immediately after child component is mounted
-    <DebouncedRender delay={100} renderCondition={loading} minDuration={500}>
+    <DebouncedRender 
+        renderCondition={loading} 
+        minDuration={500}
+        // Don't forget to set loading flag to false manually when used with minDuration
+        onHide={()=> setLoading(false)}>
+      <Loader />
+    </DebouncedRender>
+  );
+}
+```
+
+**For smoother experience delay and minDuration should be used together**
+
+```jsx
+import { DebouncedRender } from "debounced-render";
+
+function MyComponent({ loading, setLoading }) {
+  return (
+    <DebouncedRender 
+        renderCondition={loading} 
+        // delay and minDuration can be used at the same time
+        delay={500}
+        minDuration={200}
+        onHide={()=> setLoading(false)}>
       <Loader />
     </DebouncedRender>
   );
@@ -40,12 +63,13 @@ function MyComponent({ loading }) {
 # Props
 
 
-| Prop Name | Description  |
-| :---------: | :--------: |
-| renderCondition  | The flag that decides if the children should be rendered |
-| delay  | Debouncing delay before mounting the children after the renderCondition flag is set to true(milliseconds) |
-| minDuration (Optional)  | Minimum amount of time the children will stay mounted(milliseconds)  |
-| onRender (Optional)  | A callback function that will be called when the children mounted |
+|       Prop Name        |                                                Description                                                |
+|:----------------------:|:---------------------------------------------------------------------------------------------------------:|
+|    renderCondition     |                         The flag that decides if the children should be rendered                          |
+|    delay (Optional)    | Debouncing delay before mounting the children after the renderCondition flag is set to true(milliseconds) |
+| minDuration (Optional) |                    Minimum amount of time the children will stay mounted(milliseconds)                    |
+|  onRender (Optional)   |                   A callback function that will be called when the children is mounted                    |
+|   onHide (Optional)    |                  A callback function that will be called when the children is unmounted                   |
 
 
 [npm-url]: https://www.npmjs.com/package/debounced-render
