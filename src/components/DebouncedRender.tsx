@@ -49,7 +49,7 @@ const DebouncedRender: React.FC<DebouncedRenderProps> = ({
     } else if (renderedOnce && onHide) {
       onHide();
     }
-  }, [render]);
+  }, [render, renderedOnce]);
 
   useEffect(() => {
     if (
