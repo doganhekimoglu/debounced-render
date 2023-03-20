@@ -1,8 +1,7 @@
-[![NPM version][npm-image]][npm-url]
-
-![npm-typescript]
-
-[![License][github-license]][github-license-url]
+[![Minified size][npm-size]][npm-url]&nbsp;&nbsp;
+[![Version][npm-version]][npm-url]&nbsp;&nbsp;
+[![Typescript][npm-typescript]][npm-url]&nbsp;&nbsp;
+[![License][github-license]][github-license-url]&nbsp;&nbsp;
 
 **Easy to use wrapper react component to debounce the render of its children**
 
@@ -26,7 +25,7 @@ function MyComponent({ loading }) {
 ```jsx
 import { DebouncedRender } from "debounced-render";
 
-function MyComponent({ loading, setLoading }) {
+function MyComponent({ loading }) {
   return (
     // <Loader /> component will be rendered for at least 500ms after it is mounted.
     // Even if the loading flag switches to false immediately after child component is mounted
@@ -44,7 +43,7 @@ function MyComponent({ loading, setLoading }) {
 ```jsx
 import { DebouncedRender } from "debounced-render";
 
-function MyComponent({ loading, setLoading }) {
+function MyComponent({ loading }) {
   return (
     <DebouncedRender 
         renderCondition={loading} 
@@ -70,7 +69,8 @@ function MyComponent({ loading, setLoading }) {
 
 
 [npm-url]: https://www.npmjs.com/package/debounced-render
-[npm-image]: https://img.shields.io/github/package-json/v/doganhekimoglu/debounced-render
+[npm-version]: https://img.shields.io/npm/v/debounced-render
 [github-license]: https://img.shields.io/npm/l/debounced-render
 [github-license-url]: https://github.com/doganhekimoglu/debounced-render/blob/master/LICENSE
 [npm-typescript]: https://img.shields.io/npm/types/debounced-render
+[npm-size]: https://img.shields.io/bundlephobia/min/debounced-render
