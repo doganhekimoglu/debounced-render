@@ -121,7 +121,7 @@ test('onRender callback should be called after the children is mounted', async (
 
       await wait(debounceDelay + 50);
 
-      expect(renderCallback).toHaveBeenCalled();
+      expect(renderCallback).toHaveBeenCalledTimes(1);
     },
     { timeout: 100000 },
   );
@@ -176,7 +176,7 @@ test('onHide callback should be called after the children is unmounted', async (
 
       await wait(100);
 
-      expect(hideCallback).toHaveBeenCalled();
+      expect(hideCallback).toHaveBeenCalledTimes(1);
     },
     { timeout: 100000 },
   );
