@@ -1,6 +1,7 @@
 [![Minified size][npm-size]][npm-url]&nbsp;&nbsp;
 [![Version][npm-version]][npm-url]&nbsp;&nbsp;
 [![Typescript][npm-typescript]][npm-url]&nbsp;&nbsp;
+[![Build][github-build]][github-tests-url]&nbsp;&nbsp;
 [![License][github-license]][github-license-url]&nbsp;&nbsp;
 
 **Easy to use wrapper react component to debounce the render of its children**
@@ -69,6 +70,8 @@ function MyComponent({ loading }) {
 
 
 [npm-url]: https://www.npmjs.com/package/debounced-render
+[github-tests-url]: https://github.com/doganhekimoglu/debounced-render/tree/master/tests
+[github-build]: https://img.shields.io/github/actions/workflow/status/doganhekimoglu/debounced-render/publish.yml
 [npm-version]: https://img.shields.io/npm/v/debounced-render
 [github-license]: https://img.shields.io/npm/l/debounced-render
 [github-license-url]: https://github.com/doganhekimoglu/debounced-render/blob/master/LICENSE
